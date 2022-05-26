@@ -1,16 +1,23 @@
 import UIKit
 import XCTest
 
+/// An action is an operation that will modify the previous state and return a new state.
+typealias Action = (_ action: String) -> String
+
+/// A callback that will be triggered whenever the state changes.
+typealias StateListener = (_ newState: String) -> Void
+
+/// A store maintains & manages an instance of the state.
 class Store {
     init(_ state: String) {
 
     }
 
-    func registerListener(_ listener: @escaping (String) -> Void) {
+    func registerListener(_ listener: @escaping StateListener) {
 
     }
 
-    func updateState(_ action: @escaping (String) -> String) {
+    func updateState(_ action: @escaping Action) {
 
     }
 }
